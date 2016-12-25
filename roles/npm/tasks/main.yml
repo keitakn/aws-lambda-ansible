@@ -1,0 +1,7 @@
+- name: npm Update.
+  become: no
+  shell: bash -lc "npm update -g"
+
+- name: Install serverless
+  become: no
+  shell: bash -lc "npm install -g serverless"

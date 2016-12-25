@@ -7,6 +7,7 @@
 # you're doing.
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
+  config.vm.box_check_update = false
   config.vm.network "private_network", ip: "192.168.33.60"
 
   config.vm.provider "virtualbox" do |vb|

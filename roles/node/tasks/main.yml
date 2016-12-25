@@ -1,0 +1,17 @@
+- name: Check Node Is Installed.
+  become: no
+  shell: bash -lc "nodebrew ls | grep {{ node_version }}"
+  register: node_is_installed
+  changed_when: no
+  failed_when: no
+
+- name: Install Node.
+  become: no
+  shell: bash -lc "nodebrew install-binary {{ node_version }} --v8-options=--harmony"
+  when: node_is_installed|failed
+  failed_when: no
+
+- name: Switch a version to use.
+  become: no
+  shell: bash -lc "nodebrew use {{ node_version }}"
+  when: node_is_installed|failed

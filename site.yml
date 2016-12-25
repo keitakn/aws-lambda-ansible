@@ -1,0 +1,9 @@
+- hosts: web
+  become: yes
+  vars_files:
+      - vars/{{ stage }}.yml
+  roles:
+    - common
+    - nodebrew
+    - node
+    - npm

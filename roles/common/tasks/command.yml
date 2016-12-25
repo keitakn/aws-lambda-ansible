@@ -1,0 +1,11 @@
+- name: install locate
+  yum : name=mlocate state=latest
+
+- name: install git
+  yum : name=git state=latest
+
+- name: install wget
+  yum : name=wget state=latest
+
+- name: install unzip
+  yum: name=unzip
