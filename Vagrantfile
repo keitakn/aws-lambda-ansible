@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.box_check_update = false
   config.vm.network "private_network", ip: "192.168.33.60"
+  config.vm.hostname = "aws-lambda.dev"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024", "--cpus", "2", "--ioapic", "on"]
