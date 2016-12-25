@@ -1,0 +1,12 @@
+- name: Check pip Is Installed.
+  shell: pip
+  register: pip_is_installed
+  changed_when: no
+  failed_when: no
+
+- name: Install pip.
+  yum : name=python-pip state=latest
+
+- name: pip Upgrade.
+  shell: pip install pip --upgrade
+  when: pip_is_installed|failed

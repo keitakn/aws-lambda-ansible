@@ -1,0 +1,9 @@
+- name: Check awscli Is Installed.
+  shell: aws help
+  register: awscli_is_installed
+  changed_when: no
+  failed_when: no
+
+- name: Install awscli
+  shell: pip install awscli
+  when: awscli_is_installed|failed
