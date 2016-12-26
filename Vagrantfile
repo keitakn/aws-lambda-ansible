@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
 
   %w(
     aws-lambda-sample
+    aws-serverless-prototype
   ).each do |dir|
     config.vm.synced_folder "../#{dir}", "/home/vagrant/#{dir}" if  File.exist?("../#{dir}")
   end
