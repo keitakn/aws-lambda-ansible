@@ -4,3 +4,4 @@
 - include: os-update.yml
 - include: selinux.yml
 - include: command.yml
+- include: chrony.yml
