@@ -3,7 +3,7 @@
   shell: bash -lc "nodebrew help"
   register: nodebrew_is_installed
   changed_when: no
-  ignore_errors: yes
+  failed_when: no
 
 - name: Install nodebrew
   become: no
