@@ -23,3 +23,16 @@
   shell: bash -lc "npm install -g serverless"
   when: serverless_is_installed|failed
   failed_when: no
+
+- name: Check yarn Is Installed.
+  become: no
+  shell: bash -lc "yarn --version | grep {{ yarn_version }}"
+  register: yarn_is_installed
+  changed_when: no
+  failed_when: no
+
+- name: Intall yarn
+  become: no
+  shell: bash -lc "npm install -g yarn"
+  when: yarn_is_installed|failed
+  failed_when: no
