@@ -1,0 +1,8 @@
+- name: Install chrony.
+  yum: name=chrony
+
+- name: Replace chrony.conf.
+  template: src=chrony.conf.j2 dest=/etc/chrony.conf owner=root group=root mode=0644
+
+- name: Restart chronyd.
+  service: name=chronyd state=restarted enabled=yes
