@@ -67,8 +67,4 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 sudo chronyc -a makestep
 ```
 
-```date```コマンドで時刻を確認すると同期が出来ている事が確認出来るかと思います。
-
-```
-2017年  1月  9日 月曜日 11:19:22 JST
-```
+```date``` コマンドで時刻を確認すると同期が出来ている事が確認出来るかと思います。
