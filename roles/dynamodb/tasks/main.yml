@@ -1,0 +1,12 @@
+- name: Make dynamodb_download_dir.
+  become: no
+  file: path={{ dynamodb_download_dir }} state=directory
+
+- name: Check dynamodb Is Downloaded.
+  stat: path={{ dynamodb_download_dir }}/{{ dynamodb_filename }}
+  register: is_dynamodb_downloaded
+
+- name: Download dynamodb_local tarball.
+  become: no
+  get_url: url={{ dynamodb_download_url }} dest={{ dynamodb_download_dir }}/{{ dynamodb_filename }}
+  when: is_dynamodb_downloaded.stat.md5 is not defined
