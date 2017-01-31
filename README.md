@@ -9,6 +9,27 @@ AWS Lambdaのローカル開発環境です。
 
 [ServerlessFramework](https://github.com/serverless/serverless)に関しては、開発がある程度安定するまでは最新版をインストールします。
 
+## 動作環境
+以下の環境でのみ動作確認を行っております。
+
+- MacOS X 10.11.6
+- VirtualBox 5.1.12
+- Ansible 2.2.1.0
+
+他はともかくAnsibleに関しては2.2.X系からのみ利用出来るSyntaxを使っていますので、最低でもAnsibleのバージョンは表記以上にする必要があります。
+
+## DynamoDBの起動
+
+AmazonのDynamoDBを環境内で利用可能です。
+以下のコマンドで起動を行って下さい。（作業はvagrantユーザーで行って下さい。）
+
+```bash
+cd ~/dynamodb/
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -inMemory
+```
+
+起動時のオプションに関しては [公式ドキュメント](http://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/DynamoDBLocal.html) を参照して下さい。
+
 ## 時刻同期がズレている事が原因で起こるトラブル
 
 ```serverless deploy``` 等を実行した際に下記のようなエラーが表示される事があります。
