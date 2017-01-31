@@ -1,0 +1,2 @@
+- name: Install JDK.
+  yum: name=java

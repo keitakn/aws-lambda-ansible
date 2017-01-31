@@ -9,3 +9,5 @@
     - npm
     - pip
     - awscli
+    - java
+    - dynamodb

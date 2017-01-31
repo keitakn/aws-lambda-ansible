@@ -1,2 +1,3 @@
 nodebrew_install_home_dir: /home/vagrant/
 nodebrew_install_user: vagrant
+dynamodb_download_dir: /home/vagrant/dynamodb
