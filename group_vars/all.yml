@@ -1,6 +1,6 @@
 node_version: v4.3.2
 npm_version: 4.1.1
-yarn_version: 0.19.1
-serverless_version: 1.6.0
+yarn_version: 0.21.3
+serverless_version: 1.8.0
 dynamodb_download_url: http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz
 dynamodb_filename: dynamodb_local_latest.tar.gz
