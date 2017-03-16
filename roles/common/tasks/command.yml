@@ -9,3 +9,6 @@
 
 - name: install unzip
   yum: name=unzip
+
+- name: install the 'Development tools' package group
+  yum : name="@Development tools" state=present
