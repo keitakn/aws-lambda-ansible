@@ -1,16 +1,3 @@
-- name: Check Node Is Installed.
-  become: no
-  shell: bash -lc "npm --version | grep {{ npm_version }}"
-  register: npm_is_updated
-  changed_when: no
-  failed_when: no
-
-- name: npm Update.
-  become: no
-  shell: bash -lc "npm update -g"
-  when: npm_is_updated|failed
-  failed_when: no
-
 - name: Check Serverless Is Installed.
   become: no
   shell: bash -lc "serverless Commands | grep {{ serverless_version }}"
